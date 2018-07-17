@@ -1,0 +1,17 @@
+{
+  "name": "karma-test",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "karma start karma-conf.js"
+  },
+  "dependencies": {
+    "karma-cli": "^1.0.1"
+  },
+  "devDependencies": {
+    "jasmine": "^3.1.0",
+    "karma": "^2.0.4",
+    "karma-jasmine": "^1.1.2",
+    "karma-phantomjs-launcher": "^1.0.4"
+  }
+}

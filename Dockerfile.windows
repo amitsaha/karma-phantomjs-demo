@@ -1,0 +1,11 @@
+# escape=`
+FROM microsoft/windowsservercore
+
+SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+RUN Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+RUN choco install -y phantomjs git nodejs yarn
+
+ADD . C:/app
+WORKDIR C:/app
+RUN npm install
+CMD powershell -File .\RunTests.ps1
